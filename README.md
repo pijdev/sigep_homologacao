@@ -352,3 +352,4 @@ curl -s http://localhost:11434/api/generate -d '{
   <p>Feito com ❤️ e ☕ por pijdev</p>
   <p>© 2026 SIGEP Homologação v2.0</p>
 </div>
+# Teste de commit em português
