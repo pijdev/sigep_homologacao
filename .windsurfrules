@@ -1,0 +1,189 @@
+# =============================================================================
+# SIGEP HOMOLOGAÇÃO - REGRAS DO AMBIENTE DE DESENVOLVIMENTO
+# =============================================================================
+# Sistema de Gestão Penitenciária v2.0 - Laravel + AdminLTE 4
+# Ambiente: Homologação Local
+# Última atualização: 2026-03-23
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# OBJETIVO PRINCIPAL
+# -----------------------------------------------------------------------------
+# Este ambiente serve como homologação do SIGEP v2.0 antes de ir para produção.
+# Todas as funcionalidades devem ser testadas aqui antes do deploy.
+# Mantenha compatibilidade com o sistema SIGEP existente em C:\Program Files\Apache24\htdocs\sigep
+
+# -----------------------------------------------------------------------------
+# TECNOLOGIAS PADRÃO
+# -----------------------------------------------------------------------------
+# Backend: Laravel 13.x + PHP 8.4.16
+# Frontend: AdminLTE 4 + Bootstrap 5 + jQuery 3.6.0
+# Banco: MySQL 8.0 (sigep_homologacao)
+# Cache: Redis (Ollama Docker) + Predis
+# Autenticação: Laravel Fortify
+# Arquitetura: MVC tradicional com navegação SPA
+
+# -----------------------------------------------------------------------------
+# ESTRUTURA DE DIRETÓRIOS
+# -----------------------------------------------------------------------------
+# modulos/[setor]/[nome]/
+# ├── [nome]_view.php      # Interface AdminLTE
+# ├── [nome]_logica.php    # Controller PHP
+# ├── assets/
+# │   ├── css/[nome].css   # Estilos customizados
+# │   └── js/[nome].js     # JavaScript + AJAX
+# └── README.md            # Documentação do módulo
+
+# -----------------------------------------------------------------------------
+# PADRÕES DE CODIFICAÇÃO OBRIGATÓRIOS
+# -----------------------------------------------------------------------------
+# PHP:
+# - PSR-4 para autoload
+# - PDO prepared statements (sem SQL injection)
+# - Charset utf8mb4_unicode_ci
+# - Validações e sanitização de inputs
+# - Tratamento de exceções
+
+# JavaScript:
+# - jQuery 3.6.0
+# - Proteção contra múltiplos carregamentos SPA
+# - AJAX com tratamento de erros
+# - Sem console.log em produção
+
+# CSS:
+# - AdminLTE 4 classes
+# - Bootstrap 5 utilities
+# - Nomenclatura BEM para CSS customizado
+# - Mobile-first responsive
+
+# -----------------------------------------------------------------------------
+# BANCO DE DADOS
+# -----------------------------------------------------------------------------
+# Database: sigep_homologacao
+# Charset: utf8mb4_unicode_ci
+# Connection: MySQL via PDO
+# Migrations: Laravel com timestamps
+# Foreign keys: ON DELETE RESTRICT
+# Índices: performance otimizada
+
+# -----------------------------------------------------------------------------
+# CONFIGURAÇÕES DE AMBIENTE (.env)
+# -----------------------------------------------------------------------------
+# APP_NAME="SIGEP - Homologação"
+# APP_ENV=local
+# APP_DEBUG=true
+# APP_URL=http://localhost:8000
+# APP_LOCALE=pt_BR
+# DB_CONNECTION=mysql
+# DB_DATABASE=sigep_homologacao
+# CACHE_STORE=redis
+# REDIS_CLIENT=predis
+# OLLAMA_BASE_URL=http://localhost:11434
+
+# -----------------------------------------------------------------------------
+# MODELOS DE IA LOCAL (OLLAMA)
+# -----------------------------------------------------------------------------
+# sigep-adminlte:latest - Desenvolvimento (base: qwen2.5-coder:7b)
+# sigep-chatbot:latest  - Chatbot usuários (base: phi4-mini:latest)
+# qwen2.5-coder:7b     - Programação geral
+# phi4-mini:latest     - Tarefas rápidas
+
+# -----------------------------------------------------------------------------
+# SERVIÇOS EXTERNOS
+# -----------------------------------------------------------------------------
+# Redis: Docker container ollama-server (porta 11434)
+# MySQL: Servidor local (usuário: sigep)
+# Servidor: php artisan serve --host=0.0.0.0 --port=8000
+
+# -----------------------------------------------------------------------------
+# FLUXO DE TRABALHO DESENVOLVIMENTO
+# -----------------------------------------------------------------------------
+# 1. Criar estrutura do módulo em modulos/[setor]/[nome]/
+# 2. Desenvolver controller (_logica.php) com segurança
+# 3. Criar view (_view.php) com AdminLTE
+# 4. Implementar JavaScript (_view.js) com proteção SPA
+# 5. Adicionar CSS customizado se necessário
+# 6. Configurar rota em routes/web.php
+# 7. Adicionar menu em includes/sidebar_logica.php
+# 8. Testar completamente antes de deploy
+
+# -----------------------------------------------------------------------------
+# REGRAS DE SEGURANÇA
+# -----------------------------------------------------------------------------
+# - Sempre verificar sessão e permissões
+# - Usar PDO prepared statements
+# - Validar e sanitizar inputs
+# - Implementar CSRF protection
+# - Rate limiting em APIs
+# - Log de acessos críticos
+# - Nunca expor credenciais
+
+# -----------------------------------------------------------------------------
+# PERFORMANCE E OTIMIZAÇÃO
+# -----------------------------------------------------------------------------
+# - Cache Redis para dados frequentes
+# - Opcache para PHP
+# - Lazy loading de componentes
+# - Otimização de queries
+# - Compressão de assets
+# - CDN para estáticos (produção)
+
+# -----------------------------------------------------------------------------
+# TESTES E QUALIDADE
+# -----------------------------------------------------------------------------
+# - Testar todos os CRUDs
+# - Validar permissões
+# - Testar responsividade
+# - Verificar acessibilidade
+# - Testar performance
+# - Validar segurança
+
+# -----------------------------------------------------------------------------
+# COMANDOS ÚTEIS
+# -----------------------------------------------------------------------------
+# php artisan serve --host=0.0.0.0 --port=8000
+# php artisan migrate:fresh --seed
+# php artisan config:clear
+# php artisan cache:clear
+# php artisan tinker
+# composer require [pacote]
+# docker exec ollama-server ollama list
+
+# -----------------------------------------------------------------------------
+# AMBIENTE VS PRODUÇÃO
+# -----------------------------------------------------------------------------
+# Homologação:
+# - Database: sigep_homologacao
+# - APP_DEBUG=true
+# - Cache: Redis local
+# - Logs: debug level
+# - Senhas: ambiente controlado
+
+# Produção (C:\Program Files\Apache24\htdocs\sigep):
+# - Database: sigep
+# - APP_DEBUG=false
+# - Cache: Redis produção
+# - Logs: error level
+# - Senhas: ambiente seguro
+
+# -----------------------------------------------------------------------------
+# INTEGRAÇÃO COM SISTEMA ANTIGO
+# -----------------------------------------------------------------------------
+# - Manter compatibilidade com estrutura existente
+# - Respeitar padrões já estabelecidos
+# - Migrar gradualmente funcionalidades
+# - Preservar dados existentes
+# - Testar integrações cuidadosamente
+
+# -----------------------------------------------------------------------------
+# DOCUMENTAÇÃO OBRIGATÓRIA
+# -----------------------------------------------------------------------------
+# - README.md em cada módulo
+# - Comentários em código complexo
+# - Documentação de APIs
+# - Manual de usuário
+# - Histórico de mudanças
+
+# =============================================================================
+# FIM DAS REGRAS - SIGEP HOMOLOGAÇÃO
+# =============================================================================
