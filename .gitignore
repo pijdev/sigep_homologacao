@@ -31,3 +31,7 @@ Thumbs.db
 /bootstrap/cache/*
 .phpunit.result.cache
 .phpunit.xml
+
+# Git Credentials (Security)
+.git-credentials
+.gitconfig
