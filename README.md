@@ -1,12 +1,10 @@
 <div align="center">
   <a href="https://github.com/pijdev/sigep_homologacao" target="_blank">
-    <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="SIGEP Logo">
+    <img src="https://raw.githubusercontent.com/dfsmania/LaradminLTE/main/logo.png" width="400" alt="SIGEP Logo">
   </a>
 </div>
 
 <div align="center">
-  <a href="https://github.com/pijdev/sigep_homologacao/actions">
-    <img src="https://github.com/pijdev/sigep_homologacao/workflows/Tests/badge.svg" alt="Build Status">
   </a>
   <a href="https://github.com/pijdev/sigep_homologacao/releases">
     <img src="https://img.shields.io/github/v/release/pijdev/sigep_homologacao" alt="Latest Version">
@@ -14,8 +12,8 @@
   <a href="https://github.com/pijdev/sigep_homologacao/blob/main/LICENSE">
     <img src="https://img.shields.io/github/license/pijdev/sigep_homologacao" alt="License">
   </a>
-  <a href="https://github.com/pijdev/sigep_homologacao/stargazers">
-    <img src="https://img.shields.io/github/stars/pijdev/sigep_homologacao" alt="Stars">
+  <a href="https://github.com/dfsmania/LaradminLTE">
+    <img src="https://img.shields.io/badge/Based_on-LaradminLTE-blue" alt="Based on LaradminLTE">
   </a>
 </div>
 
@@ -23,7 +21,11 @@
 
 > Sistema de Gestão Empresarial v2.0 - Ambiente de Homologação
 
-Um sistema completo de gestão empresarial desenvolvido com as mais modernas tecnologias web, focado em performance, segurança e escalabilidade.
+Um sistema completo de gestão empresarial desenvolvido com base no [LaradminLTE](https://github.com/dfsmania/LaradminLTE), utilizando as mais modernas tecnologias web, focado em performance, segurança e escalabilidade.
+
+## 🏗️ Base do Projeto
+
+Este projeto é desenvolvido como uma customização do [LaradminLTE](https://github.com/dfsmania/LaradminLTE), um pacote Laravel que integra AdminLTE com funcionalidades de administração modernas.
 
 ## 🚀 Stack Tecnológico
 
@@ -135,11 +137,13 @@ php artisan key:generate
 
 ### 4. Configurar Banco de Dados
 
+Configure as credenciais no arquivo `.env`:
+
 ```env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
-DB_DATABASE=sigep_homologacao
-DB_USERNAME=sigep
+DB_DATABASE=seu_banco
+DB_USERNAME=seu_usuario
 DB_PASSWORD=sua_senha
 ```
 
@@ -302,23 +306,6 @@ jobs:
 - [ ] Docker containers
 - [ ] Kubernetes deployment
 - [ ] Monitoring integration
-
-## 🤝 Contribuição
-
-### Como Contribuir
-
-1. Fork o repositório
-2. Crie branch feature (`git checkout -b feature/amazing-feature`)
-3. Commit suas mudanças (`git commit -m 'Add amazing feature'`)
-4. Push para o branch (`git push origin feature/amazing-feature`)
-5. Abra um Pull Request
-
-### Padrões de Código
-
-- **PHP**: PSR-4, PSR-12
-- **JavaScript**: ES6+ com jQuery
-- **CSS**: BEM methodology
-- **Commits**: Conventional Commits
 
 ## 📝 Licença
 
