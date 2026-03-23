@@ -1,10 +1,4 @@
 <div align="center">
-  <a href="https://github.com/pijdev/sigep_homologacao" target="_blank">
-    <img src="https://raw.githubusercontent.com/dfsmania/LaradminLTE/main/logo.png" width="400" alt="SIGEP Logo">
-  </a>
-</div>
-
-<div align="center">
   </a>
   <a href="https://github.com/pijdev/sigep_homologacao/releases">
     <img src="https://img.shields.io/github/v/release/pijdev/sigep_homologacao" alt="Latest Version">

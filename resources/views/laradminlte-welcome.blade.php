@@ -6,7 +6,7 @@
             <div class="col-12">
                 <h3 class="fw-bold">
                     <i class="bi bi-heart-fill text-danger"></i>
-                    Welcome to LaradminLTE!
+                    Bem-vindo ao SIGEP!
                 </h3>
             </div>
         </div>
@@ -16,14 +16,14 @@
     <div class="row">
         <div class="col-12">
             <i class="bi bi-rocket-takeoff-fill fs-5 text-primary"></i>
-            Now, start building your next administration panel with ease and flexibility.
+            Sistema de Gestão Empresarial v2.0 - Ambiente de Homologação
         </div>
     </div>
 
     {{-- Push inline scripts if needed --}}
     @push('js')
         <script>
-            console.log('LaradminLTE is successfully loaded!');
+            console.log('SIGEP Homologação está funcionando!');
         </script>
     @endpush
 
