@@ -1,3 +1,5 @@
+# Windsurf Rules – SIGEP HOMOLOGAÇÃO ##
+
 # =============================================================================
 # SIGEP HOMOLOGAÇÃO - REGRAS DO AMBIENTE DE DESENVOLVIMENTO
 # =============================================================================
@@ -72,7 +74,7 @@
 # APP_NAME="SIGEP - Homologação"
 # APP_ENV=local
 # APP_DEBUG=true
-# APP_URL=http://localhost:8000
+# APP_URL=http://sigep-hml.localhost/
 # APP_LOCALE=pt_BR
 # DB_CONNECTION=mysql
 # DB_DATABASE=sigep_homologacao
@@ -159,7 +161,7 @@
 # - Logs: debug level
 # - Senhas: ambiente controlado
 
-# Produção (C:\Program Files\Apache24\htdocs\sigep):
+# Produção (C:\Sites\sigep):
 # - Database: sigep
 # - APP_DEBUG=false
 # - Cache: Redis produção
@@ -183,6 +185,7 @@
 # - Documentação de APIs
 # - Manual de usuário
 # - Histórico de mudanças
+# - O arquivo C:\Sites\sigep_hml\CHANGELOG.md deve ser atualizado sempre que houver alteração relevante no ambiente HML
 
 # =============================================================================
 # FIM DAS REGRAS - SIGEP HOMOLOGAÇÃO

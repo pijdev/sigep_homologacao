@@ -1,116 +1,45 @@
-# SIGEP Homologação - Documentação Completa
+# SIGEP HML - Base de Conhecimento
 
-## 📋 Visão Geral
+Esta pasta e o arquivo `ArquitetoHML.md` formam a base de contexto para agentes de IA trabalharem no ambiente de homologacao com seguranca.
 
-O Sistema de Gestão Penitenciária (SIGEP) v2.0 é um sistema governamental completo para gestão penitenciária desenvolvido em Laravel + AdminLTE 4.
+## Leitura recomendada
 
-## 🏗️ Estrutura da Documentação
+1. `ArquitetoHML.md` - ponto de entrada para o Cascade
+2. `arquitetura/visao-geral-hml.md` - arquitetura real do projeto
+3. `arquitetura/interface-grafica-e-navegacao.md` - padroes de UI, Blade e menu
+4. `arquitetura/acl-e-permissoes.md` - modelo de autorizacao e regras de escopo
+5. `banco-de-dados/guia-operacional.md` - banco `sigep_homologacao`, migrations e seeders
+6. `desenvolvimento/criacao-de-paginas-e-modulos.md` - passo a passo para criar telas novas
+7. `desenvolvimento/checklist-de-entrega.md` - validacao antes de concluir qualquer tarefa
 
-```
-docs/
-├── README.md                           # Este arquivo
-├── arquitetura/                        # Arquitetura do sistema
-│   ├── visao-geral.md                 # Visão geral e conceitos
-│   ├── mvc-adminlte.md                # Padrão MVC + AdminLTE
-│   ├── navegacao-spa.md               # Sistema de navegação
-│   └── seguranca.md                   # Segurança e permissões
-├── desenvolvimento/                     # Guias de desenvolvimento
-│   ├── guia-rapido.md                 # Setup inicial
-│   ├── padroes-codigo.md              # Padrões de codificação
-│   ├── criando-modulos.md             # Como criar módulos
-│   ├── frontend-guide.md              # Guia frontend
-│   └── deploy-producao.md             # Deploy para produção
-├── banco-de-dados/                     # Documentação do banco
-│   ├── schema.md                       # Schema completo
-│   ├── migrations.md                   # Migrations Laravel
-│   └── queries-comuns.md               # Queries úteis
-├── ia-e-automacao/                     # IA e automação
-│   ├── modelos-ollama.md              # Modelos de IA
-│   ├── chatbot-integracao.md          # Chatbot SIGEP
-│   └── automacao-tarefas.md           # Automação de tarefas
-└── api/                               # Documentação de APIs
-    ├── endpoints.md                    # Endpoints disponíveis
-    └── exemplos.md                      # Exemplos de uso
-```
+## Regras centrais
 
-## 🚀 Começando Rápido
+- Ambiente alvo: `C:\Sites\sigep_hml`
+- Banco alvo: `sigep_homologacao`
+- Nunca confundir com producao em `C:\Sites\sigep`
+- O codigo ativo e Laravel 13 + LaradminLTE/AdminLTE 4, nao a estrutura legada `modulos/[setor]/[nome]`
+- Autenticacao usa Laravel Fortify com login por `login` e selecao obrigatoria de `unidade_id`
+- Controle de acesso usa `App\Services\AclService` + tabelas `autenticacao_*`
+- Menus visiveis dependem de `config/ladmin/menu.php`
+- Novas paginas devem respeitar rota, controller, view Blade e regra de autorizacao coerentes
 
-1. **Setup do Ambiente**: Veja [desenvolvimento/guia-rapido.md](desenvolvimento/guia-rapido.md)
-2. **Criar Módulo**: Siga [desenvolvimento/criando-modulos.md](desenvolvimento/criando-modulos.md)
-3. **Banco de Dados**: Consulte [banco-de-dados/schema.md](banco-de-dados/schema.md)
-4. **IA Local**: Veja [ia-e-automacao/modelos-ollama.md](ia-e-automacao/modelos-ollama.md)
+## Fontes do proprio projeto
 
-## 📚 Principais Tópicos
+- `README.md`
+- `.windsurfrules`
+- `routes/web.php`
+- `config/ladmin/menu.php`
+- `app/Services/AclService.php`
+- `app/Http/Controllers/Admin/*`
+- `database/migrations/*`
+- `database/seeders/*`
 
-### 🏗️ Arquitetura
-- [Visão Geral](arquitetura/visao-geral.md) - Conceitos e estrutura
-- [MVC + AdminLTE](arquitetura/mvc-adminlte.md) - Padrão de desenvolvimento
-- [Navegação SPA](arquitetura/navegacao-spa.md) - Sistema de navegação
-- [Segurança](arquitetura/seguranca.md) - Autenticação e permissões
+## Objetivo desta base
 
-### 💻 Desenvolvimento
-- [Guia Rápido](desenvolvimento/guia-rapido.md) - Setup inicial
-- [Padrões de Código](desenvolvimento/padroes-codigo.md) - Regras e convenções
-- [Criando Módulos](desenvolvimento/criando-modulos.md) - Guia passo a passo
-- [Frontend Guide](desenvolvimento/frontend-guide.md) - JavaScript e CSS
+Permitir que o Cascade entre no chat, leia `ArquitetoHML.md`, siga os links desta pasta e trabalhe com contexto suficiente para:
 
-### 🗄️ Banco de Dados
-- [Schema](banco-de-dados/schema.md) - Estrutura completa
-- [Migrations](banco-de-dados/migrations.md) - Migrations Laravel
-- [Queries Comuns](banco-de-dados/queries-comuns.md) - Queries úteis
-
-### 🤖 IA e Automação
-- [Modelos Ollama](ia-e-automacao/modelos-ollama.md) - Modelos de IA disponíveis
-- [Chatbot SIGEP](ia-e-automacao/chatbot-integracao.md) - Chatbot para usuários
-- [Automação](ia-e-automacao/automacao-tarefas.md) - Tarefas automatizadas
-
-## 🔧 Configurações Rápidas
-
-### Variáveis de Ambiente Principais
-```env
-APP_NAME="SIGEP - Homologação"
-APP_URL=http://localhost:8000
-DB_DATABASE=sigep_homologacao
-CACHE_STORE=redis
-OLLAMA_BASE_URL=http://localhost:11434
-```
-
-### Comandos Essenciais
-```bash
-# Iniciar servidor
-php artisan serve --host=0.0.0.0 --port=8000
-
-# Resetar banco
-php artisan migrate:fresh --seed
-
-# Limpar cache
-php artisan config:clear && php artisan cache:clear
-
-# Listar modelos IA
-docker exec ollama-server ollama list
-```
-
-## 📖 Recursos Adicionais
-
-- **[.windsurfrules](../.windsurfrules)** - Regras do ambiente
-- **[.env.example](../.env.example)** - Exemplo de configuração
-- **[composer.json](../composer.json)** - Dependências do projeto
-
-## 🤝 Contribuição
-
-1. Siga os padrões de codificação
-2. Documente novas funcionalidades
-3. Teste antes de commitar
-4. Mantenha a documentação atualizada
-
-## 📞 Suporte
-
-Para dúvidas e suporte:
-- Consulte a documentação relevante
-- Verifique os logs de erro
-- Use o chatbot SIGEP para ajuda básica
-
----
-
-**Última atualização**: 2026-03-23  
-**Versão**: v2.0-homologação
+- criar ou alterar paginas com baixo risco
+- manter consistencia visual com LaradminLTE
+- nao quebrar ACL nem navegacao
+- nao usar banco ou ambiente errado
+- evitar assumir estruturas antigas que nao representam o estado atual do codigo

@@ -1,4 +1,4 @@
-<x-ladmin-panel title="Welcome">
+<x-ladmin-panel title="Início">
 
     {{-- Setup you content header --}}
     <x-slot name="contentHeader">
@@ -6,7 +6,7 @@
             <div class="col-12">
                 <h3 class="fw-bold">
                     <i class="bi bi-heart-fill text-danger"></i>
-                    Bem-vindo ao SIGEP!
+                    Bem-vindo ao SIGEP - Ambiente de Homologação
                 </h3>
             </div>
         </div>
@@ -16,15 +16,15 @@
     <div class="row">
         <div class="col-12">
             <i class="bi bi-rocket-takeoff-fill fs-5 text-primary"></i>
-            Sistema de Gestão Empresarial v2.0 - Ambiente de Homologação
+            Sistema Prisional Integrado
         </div>
     </div>
 
     {{-- Push inline scripts if needed --}}
     @push('js')
-        <script>
-            console.log('SIGEP Homologação está funcionando!');
-        </script>
+    <script>
+        console.log('SIGEP Homologação iniciado!');
+    </script>
     @endpush
 
 </x-ladmin-panel>

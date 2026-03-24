@@ -40,7 +40,7 @@ return [
     // Defines the path where users will get redirected during authentication
     // or password reset when the operations are successful and the user is
     // authenticated.
-    'home_path' => '/laradminlte-welcome',
+    'home_path' => '/dashboard',
 
     /*
     |--------------------------------------------------------------------------
@@ -54,10 +54,10 @@ return [
     'logo' => [
         // The URL path to the logo image file. Can be a relative path to
         // the public directory or an absolute URL.
-        'image' => '/vendor/ladmin/img/LaradminLTE-Auth.png',
+        'image' => '/vendor/ladmin/img/logo_512.png',
 
         // The alternative text for the logo image, used for accessibility.
-        'image_alt' => 'LaradminLTE Logo',
+        'image_alt' => 'SIGEP',
 
         // The CSS classes applied to style the logo image.
         'image_classes' => ['shadow-sm', 'me-1'],
@@ -69,7 +69,7 @@ return [
         'image_width' => '55px',
 
         // The text displayed alongside the logo.
-        'text' => 'LaradminLTE',
+        'text' => 'SIGEP',
 
         // The CSS classes applied to style the logo text.
         'text_classes' => ['fw-bold', 'text-secondary'],
@@ -111,7 +111,7 @@ return [
         // your User model, run the corresponding package migration to add the
         // profile_image_path column to your users table, and set up the proper
         // storage disk configuration for storing profile images.
-        'profile_image' => false,
+        'profile_image' => true,
 
         // Enables the profile information update feature, allowing users to
         // update their profile information such as name and email address.

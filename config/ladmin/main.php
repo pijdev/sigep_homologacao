@@ -1,119 +1,87 @@
 <?php
 
 /*
-|------------------------------------------------------------------------------
-| LaradminLTE General Configuration
-|------------------------------------------------------------------------------
+|--------------------------------------------------------------------------
+| Configuração Geral - SIGEP
+|--------------------------------------------------------------------------
 |
-| This file contains the general configuration settings of your admin panel.
-| You can customize various aspects of the panel, including basic information,
-| favicons, brand logo, multiple layout options, and more.
-|
-| For more details, refer to the online documentation:
-| https://dfsmania.github.io/LaradminLTE/sections/config/general.html
+| Configurações principais do painel administrativo SIGEP.
+| Personalize informações básicas, layout e funcionalidades.
 |
 */
 return [
 
     /*
     |--------------------------------------------------------------------------
-    | Basic Information
+    | Informações Básicas
     |--------------------------------------------------------------------------
-    |
-    | Here you can setup the basic information of your admin panel. By default,
-    | most of this information will appear in the footer section.
-    |
     */
 
     'basic' => [
-        // The name of the company that owns and develops the admin panel.
-        'company' => 'Your Company Name',
+        // Nome da empresa
+        'company' => 'Penitenciária Industrial de Joinville',
 
-        // The url site of the company that owns and develops the admin panel.
-        'company_url' => 'https://your-company-website.com',
+        // Site da empresa
+        'company_url' => 'https://www.sap.sc.gov.br/penitenciaria-industrial-de-joinville-1/',
 
-        // The year when the development of your admin panel started.
-        'start_year' => 2024,
+        // Ano de início do desenvolvimento
+        'start_year' => 2025,
 
-        // The version of your admin panel.
-        'version' => '1.0.0',
+        // Versão do sistema
+        'version' => '2.0.3',
     ],
 
     /*
     |--------------------------------------------------------------------------
     | Favicons
     |--------------------------------------------------------------------------
-    |
-    | Here you can configure the favicons markup for your admin panel. Favicons
-    | are small icons displayed in browser tabs, bookmarks, and other areas.
-    | They will be searched in the "favicons" folder within your configured
-    | Laravel asset_url, typically located in the public directory.
-    |
     */
 
     'favicons' => [
-        // Determines whether to include comprehensive favicon markup to ensure
-        // compatibility across various browsers and platforms. If disabled,
-        // only the basic favicon markup will be included.
+        // Suporte completo para favicons
         'full_support' => true,
 
-        // The primary color of your brand logo. Used for maskable icons on
-        // iOS and Android Chrome when full support is enabled.
+        // Cor principal do logo
         'brand_logo_color' => '#000000',
 
-        // The background color of your brand logo. Used for Microsoft
-        // application tiles and Android Chrome address bar when full support
-        // is enabled.
+        // Cor de fundo do logo
         'brand_background_color' => '#ffffff',
 
-        // The list of PNG favicon sizes that are served by your server. These
-        // sizes are used to generate the markup for the PNG favicons discovery
-        // when full support is enabled.
+        // Tamanhos dos favicons PNG
         'png_sizes' => ['16x16', '32x32', '96x96'],
     ],
 
     /*
     |--------------------------------------------------------------------------
-    | Brand Logo
+    | Logo
     |--------------------------------------------------------------------------
-    |
-    | Here you can setup the brand logo of your admin panel. By default, the
-    | logo will appear in the top-left corner of your admin panel.
-    |
     */
 
     'logo' => [
-        // The URL path to the logo image file. Can be a relative path to the
-        // public directory or an absolute URL.
-        'image' => '/vendor/ladmin/img/LaradminLTE.png',
+        // Caminho da imagem do logo
+        'image' => '/vendor/ladmin/img/logo_512.png',
 
-        // The alternative text for the logo image, used for accessibility.
-        'image_alt' => 'LaradminLTE Logo',
+        // Texto alternativo do logo
+        'image_alt' => 'Sistema Prisional Integrado',
 
-        // The CSS classes applied to style the logo image.
+        // Classes CSS da imagem
         'image_classes' => ['rounded-circle', 'shadow'],
 
-        // The text displayed alongside the logo.
-        'text' => 'LaradminLTE',
+        // Texto do logo
+        'text' => 'SIGEP',
 
-        // The CSS classes applied to style the logo text.
+        // Classes CSS do texto
         'text_classes' => ['fw-bold'],
     ],
 
     /*
     |--------------------------------------------------------------------------
-    | Default Icons
+    | Ícones
     |--------------------------------------------------------------------------
-    |
-    | Here you can setup the default icons used in your admin panel. By default,
-    | this package works with Bootstrap Icons, but FontAwesome library is also
-    | supported.
-    |
     */
 
     'icons' => [
-        // The icon used for the sidebar treeview menu items. This icon is used
-        // to indicate that the menu can be expanded to show additional items.
+        // Ícone do menu expansível
         'treeview_toggler' => 'bi bi-chevron-right',
     ],
 
@@ -121,145 +89,104 @@ return [
     |--------------------------------------------------------------------------
     | Layout
     |--------------------------------------------------------------------------
-    |
-    | Here you can change the layout options of your admin panel.
-    |
     */
 
     'layout' => [
-        // Specifies the Bootstrap theme for the entire layout. Available
-        // options are 'light' or 'dark'.
-        'bootstrap_theme' => 'light',
+        // Tema Bootstrap: 'light' ou 'dark'
+        'bootstrap_theme' => 'DARK',
 
-        // Whether to enable the compact mode, which reduces spacing between
-        // elements in the layout to create a more compact interface.
+        // Modo compacto
         'compact_mode' => false,
 
-        // Whether to enable a fixed footer.
+        // Rodapé fixo
         'fixed_footer' => false,
 
-        // Whether to enable a fixed navbar header.
+        // Barra superior fixa
         'fixed_navbar' => true,
 
-        // Whether to enable a fixed sidebar.
+        // Barra lateral fixa
         'fixed_sidebar' => true,
 
-        // Whether to enable the right-to-left (RTL) layout.
+        // Layout RTL (direita para esquerda)
         'rtl' => false,
     ],
 
     /*
     |--------------------------------------------------------------------------
-    | Navbar
+    | Barra Superior
     |--------------------------------------------------------------------------
-    |
-    | Here you can customize the top navbar section of your admin panel.
-    |
     */
 
     'navbar' => [
-        // A list of additional CSS classes applied to the navbar, typically
-        // used to configure its background color and styling.
+        // Classes CSS adicionais da barra
         'classes' => ['bg-body'],
     ],
 
     /*
     |--------------------------------------------------------------------------
-    | Sidebar
+    | Barra Lateral
     |--------------------------------------------------------------------------
-    |
-    | Here you can customize the sidebar section of your admin panel.
-    |
     */
 
     'sidebar' => [
-        // Toggles the accordion navigation feature. When enabled, expanding a
-        // sidebar menu will automatically collapse any other open menus.
+        // Menu tipo acordeão
         'accordion' => false,
 
-        // Specifies the Bootstrap theme for the sidebar. Available options are
-        // 'light' or 'dark'. Setting this to null will disable a specific theme
-        // for the sidebar, allowing it to inherit the global layout settings.
+        // Tema da barra: 'light', 'dark' ou null
         'bootstrap_theme' => 'dark',
 
-        // A list of additional CSS classes applied to the sidebar, typically
-        // used to configure its background color and styling. You can use some
-        // built-in classes here, such as 'nav-indent' to add indentation to
-        // child menu items, or 'nav-compact' to reduce the vertical spacing
-        // between menu items.
+        // Classes CSS adicionais
         'classes' => ['bg-body-secondary', 'shadow'],
 
-        // Determines if the sidebar should be collapsed by default when the
-        // page loads. This is useful for creating a cleaner interface or
-        // optimizing space on smaller screens.
+        // Iniciar contraído
         'default_collapsed' => false,
 
-        // The Bootstrap breakpoint at which the sidebar automatically expands
-        // or fully collapses. Valid options are: 'sm', 'md', 'lg', 'xl', 'xxl'.
+        // Breakpoint para expansão: 'sm', 'md', 'lg', 'xl', 'xxl'
         'expand_breakpoint' => 'lg',
 
-        // Toggles the mini sidebar feature. When enabled, and it is manually
-        // collapsed, the sidebar shrinks to a compact size displaying icons
-        // only, instead of fully collapsing.
+        // Modo mini (apenas ícones)
         'mini_sidebar' => true,
 
-        // Determines if the sidebar should persist its state (collapsed or
-        // expanded) across page reloads by saving the state in the browser's
-        // local storage.
+        // Persistir estado no localStorage
         'persistence' => false,
 
-        // The animation speed in milliseconds to use when toggling a sidebar
-        // treeview menu between expanded and collapsed states.
+        // Velocidade da animação (ms)
         'treeview_animation_speed' => 300,
     ],
 
     /*
     |--------------------------------------------------------------------------
-    | Footer
+    | Rodapé
     |--------------------------------------------------------------------------
-    |
-    | Here you can customize the footer section of your admin panel.
-    |
     */
 
     'footer' => [
-        // A list of additional CSS classes applied to the footer, typically
-        // used to configure its background color and styling.
+        // Classes CSS adicionais do rodapé
         'classes' => ['bg-body'],
     ],
 
     /*
     |--------------------------------------------------------------------------
-    | Main Content
+    | Conteúdo Principal
     |--------------------------------------------------------------------------
-    |
-    | Here you can customize the main content section of your admin panel.
-    |
     */
 
     'main_content' => [
-        // A list of additional CSS classes applied to the main content,
-        // typically used to configure its background color and styling.
+        // Classes CSS adicionais do conteúdo
         'classes' => ['bg-body-tertiary'],
     ],
 
     /*
     |--------------------------------------------------------------------------
-    | Menu Translations
+    | Traduções do Menu
     |--------------------------------------------------------------------------
-    |
-    | Here you can enable and setup how to translate the menu items of your
-    | admin panel. This will enhance user experience by allowing localization
-    | of menu labels and other text elements to create multilingual interfaces.
-    |
     */
 
     'menu_translations' => [
-        // Determines whether to enable the menu translations feature.
+        // Habilitar traduções
         'enabled' => true,
 
-        // The name of the PHP file that will be used to resolve menu
-        // translations when using short keys translations syntax.
+        // Arquivo PHP de traduções
         'php_file' => 'ladmin_menu',
     ],
 ];
